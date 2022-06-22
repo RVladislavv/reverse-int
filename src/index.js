@@ -1,10 +1,14 @@
 module.exports = function reverse (n) {
-    let res = '';
-    n = n * (-1);
-    while (n % 10 == 0) {
-        n = n / 10;
+    let x = n;
+    if (x < 0) {
+        x = x * (-1);
     }
-    n = n + '';
-    n = n.split().reverse().join("");
-    return n;
+    
+    while (x % 10 == 0) {
+        x = x / 10;
+    }
+    x = String(x);
+
+    x = x.split("").reverse().join("");
+    return Number(x);
 }
